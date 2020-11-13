@@ -1,32 +1,5 @@
 <template>
   <div class="index">
-  <!-- <div class="moviePopular">
-    <h2>Film vedette </h2>
-
-      <div class="itemPopular">
-         <section class="popular-area" v-if="listMoviePopular">
-            <div class="w3-content w3-section" v-for="popular in listMoviePopular.items.results" :key="popular.results">
-             <img class="imgSlider" :src="`https://image.tmdb.org/t/p/original${popular.backdrop_path}`" alt="">
-           </div>
-        </section>
-      </div>
-  </div> -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-co-">
-  <a class="navbar-brand" href="#" style="color:red;" >NewFlix</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Recherche film </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Wishlist</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
     <div class="movinRow" v-for="item in listMovie" :key="item.value">
       <h2 class="title">{{ item.title }}</h2>
