@@ -25,8 +25,8 @@ export default {
   data: function(){
     return{
       listMovie: null,
-      listMoviePopular: null,
-      imagensPopulas: []
+      listPopularMovie: null,
+      popularImage: []
 
     }
   },
@@ -43,9 +43,9 @@ export default {
     })
 
     Tmdb.getMoviePopular().then( value => {
-      this.listMoviePopular = value[0]
+      this.listPopularMovie = value[0]
 
-      console.log('Liste de film populaire', this.listMoviePopular)
+      console.log('Liste de film populaire', this.listPopularMovie)
 
     }).catch(err => {
       console.log('Erreur sur les films populaires !!', err)
@@ -54,7 +54,7 @@ export default {
   },
 
   watch:{
-    listMoviePopular:function(value){
+    listPopularMovie:function(value){
       if(value.items.results.length > 0){
         console.log('Liste de film ')
         setTimeout(() => {
