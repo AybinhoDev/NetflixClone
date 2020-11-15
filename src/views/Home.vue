@@ -1,9 +1,7 @@
 <template>
-  <div class="index">
-
+<div class="index">
     <div class="movinRow" v-for="item in listMovie" :key="item.value">
       <h2 class="title">{{ item.title }}</h2>
-
       <div class="list-area">
         <div class="list">
           <div class="item" v-for="movie in item.items.results" :key="movie.item">
@@ -11,7 +9,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -56,7 +53,7 @@ export default {
   watch:{
     listPopularMovie:function(value){
       if(value.items.results.length > 0){
-        console.log('Liste de film ')
+        console.log('Liste de film')
         setTimeout(() => {
           this.carousel();
         }, 100);
