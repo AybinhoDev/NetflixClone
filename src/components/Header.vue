@@ -8,7 +8,7 @@
     <ul class="navbar-nav">
         
       <li class="nav-item">
-        <router-link class="nav-link" to="/research"> Recherche film   </router-link>
+        <router-link class="nav-link" to="/research"> Recherche film </router-link>
       </li>
       
         <li class="nav-item">
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name:"Header"
+    name:"Footer"
 }
 </script>
 

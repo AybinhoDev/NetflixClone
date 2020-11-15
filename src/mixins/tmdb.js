@@ -67,7 +67,7 @@ export default{
     getMoviePopular: async () => {
         return [
             {
-                items: await basicFetch(`/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+                items: await basicFetch(`/tv/popular?language=en-US&api_key=${API_KEY}`)
             }
         ]
     }
