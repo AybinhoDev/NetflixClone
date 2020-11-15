@@ -9,7 +9,8 @@
 <script>
     import Button from "../components/Button";
     import Card from "../mixins/Card";
-    
+    import Tmdb from "../mixins/tmdb";
+
     export default {
         components: {
             Button
@@ -19,10 +20,10 @@
                 movie:{}
             }
         },
-        mixins: [Card],
+        mixins: [Tmdb, Card],
         created() {
             console.log(this.$route.params.id);
-            this.getMovie(this.$route.params.id)
+            this.getMoviePopular(this.$route.params.id)
             .then(data=> this.movie=data)
             .catch(err=> console.log(err))
         }
