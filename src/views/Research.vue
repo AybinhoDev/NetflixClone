@@ -3,7 +3,8 @@
   <div class="moviePopular">
     <h2>Film populaire</h2>
          <div class="search__form">
-            <input type="text" name="searchValue" v-model="searchValue"/>
+            <input type="text" v-model="search" placeholder="Search title.."/>
+            <label>Search title:</label>
         </div>
         
       <div class="itemPopular">
@@ -38,7 +39,16 @@ export default {
       popularImage: []
 
     }
+    
   },
+
+ computed: {
+    filteredList() {
+      return this.listPopularMovie.filter(popular => {
+        return popular.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
+ },
 
   props:['dialog'],
 
@@ -60,7 +70,10 @@ export default {
       console.log('Erreur sur les films populaires !!', err)
     })
 
+    
+
   }
+  
   }
 
 </script>
