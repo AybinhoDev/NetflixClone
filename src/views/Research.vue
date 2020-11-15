@@ -2,15 +2,13 @@
 <div class="index">
   <div class="moviePopular">
     <h2>Film populaire</h2>
-         <div class="search__form">
-            <input type="text" v-model="search" placeholder="Search title.."/>
-            <label>Search title:</label>
-        </div>
+
         
       <div class="itemPopular">
         <center>
+          <input type="text" name="search" v-model="search" placeholder="Votre recherche..."/>
          <section class="popular-area" v-if="listPopularMovie">
-            <div class="" v-for="popular in listPopularMovie.items.results" :key="popular.results"><br>
+            <div class="" v-for="popular in filteredMovies" :key="popular.results"><br>
             
              <img :src="`https://image.tmdb.org/t/p/original${popular.backdrop_path}`" class="imgFilm" alt=""> <br>
             <h5> {{popular.title}} </h5>
@@ -34,21 +32,12 @@ export default {
 
   data: function(){
     return{
-      listMovie: null,
-      listPopularMovie: null,
-      popularImage: []
+      listPopularMovie: [],
+      popularImage: [],
+      search:''
 
     }
-    
   },
-
- computed: {
-    filteredList() {
-      return this.listPopularMovie.filter(popular => {
-        return popular.title.toLowerCase().includes(this.search.toLowerCase())
-      })
-    }
- },
 
   props:['dialog'],
 
@@ -70,10 +59,14 @@ export default {
       console.log('Erreur sur les films populaires !!', err)
     })
 
-    
-
+  },
+  computed:{
+    filteredMovies:function(){
+      return this.listPopularMovie.items.results.filter((popular)=>{
+        return popular.title.match(this.search)
+      });
+    }
   }
-  
   }
 
 </script>

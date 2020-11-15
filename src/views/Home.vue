@@ -8,6 +8,7 @@
         <div class="list">
           <div class="item" v-for="movie in item.items.results" :key="movie.item">
             <img :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`" alt="">
+           
           </div>
         </div>
       </div>
