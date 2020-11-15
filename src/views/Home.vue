@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Tmdb  from '../tmdb';
+import Tmdb  from '../mixins/tmdb';
 
 export default {
   name: 'index',
